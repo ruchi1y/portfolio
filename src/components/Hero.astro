@@ -1,0 +1,79 @@
+---
+interface Props {
+  name: string;
+  username: string;
+  title: string;
+  description: string;
+}
+
+const { name, username, title, description } = Astro.props;
+---
+
+<section class="hero">
+  <div class="neofetch-window">
+    <div class="neofetch-avatar">
+      <img 
+        src={`https://github.com/${username}.png?size=200`} 
+        alt={`${name} profile picture`} 
+      />
+    </div>
+
+    <div class="neofetch-info">
+      <h1>{name}</h1>
+      <p class="subtitle">{title}</p>
+      <p class="description">{description}</p>
+    </div>
+  </div>
+</section>
+<style>
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 2rem;
+}
+
+.neofetch-window {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.neofetch-avatar img {
+  border-radius: 0.5rem;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.neofetch-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #f1f1f1;
+  font-family: monospace;
+}
+
+.neofetch-info h1 {
+  font-size: 2rem;
+  color: #00ff95; /* verde terminal */
+  margin: 0 0 0.5rem;
+}
+
+.neofetch-info .subtitle {
+  font-size: 1.2rem;
+  color: #87cefa; /* celeste */
+  margin-bottom: 0.5rem;
+}
+
+.neofetch-info .description {
+  max-width: 400px;
+  line-height: 1.5;
+}
+</style>

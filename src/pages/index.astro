@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+
+// Page-specific data
+const portfolioData = {
+  name: "Greeting, I'm Reiji",
+  username: "ruchi1y",
+  title: "Software Engineer",
+  description: "I’m a software engineering student in an advanced stage of my studies.\n" + "I enjoy coding in Java and Rust, and I have a strong foundation in software principles such as SOLID and design patterns.\n" + "Currently, I’m sharpening my skills in cybersecurity while also contributing to open-source projects.\n"
+};
+---
+
+<Layout title="Reiji - Portfolio">
+  <main>
+    <Hero 
+      name={portfolioData.name}
+      username={portfolioData.username}
+      title={portfolioData.title}
+      description={portfolioData.description}
+    />
+  </main>
+</Layout>
